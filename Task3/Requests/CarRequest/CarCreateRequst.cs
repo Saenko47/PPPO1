@@ -1,20 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using static PaterniLab1.Task3.Tools.Enums;
 
-namespace PaterniLab1.Task3.Models
+namespace PaterniLab1.Task3.Requests.CarRequest
 {
-    [PrimaryKey(nameof(Id))]
-    internal class Car
+    internal class CarCreateRequst
     {
-        public int Id { get; set; }
         public string Title { get; set; } = null!;
         public float MaxWeight { get; set; }
 
         public LicenceType LincenseNeedsToDrive { get; set; }
-
-        public bool IsUsingRigthNow { get; set; } = false;
     }
 }

@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PaterniLab1.Task3.Interfaces
+namespace PaterniLab1.Task3.Repositorys
 {
-    internal interface ICreateRequest
+    internal class CarRepository
     {
+
     }
 }

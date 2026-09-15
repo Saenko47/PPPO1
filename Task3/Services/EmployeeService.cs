@@ -2,6 +2,7 @@
 
 using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using PaterniLab1.Task3.BaseClass;
+using PaterniLab1.Task3.Interfaces;
 using PaterniLab1.Task3.Models;
 using PaterniLab1.Task3.Realization;
 using PaterniLab1.Task3.Requests.EmployeeRequsts;
@@ -12,7 +13,7 @@ using System.Text;
 
 namespace PaterniLab1.Task3.Services
 {
-    internal class EmployeeService
+    internal class EmployeeService: IWorkStatus<Employee>
     {
         private readonly EmployeeRepository _employeeRepository;
         private readonly LicenceOfEmployeeService _licenseService;
@@ -60,7 +61,7 @@ namespace PaterniLab1.Task3.Services
         
         }
 
-        public async Task SetEmployeeWorkStatus(int id, bool status) 
+        public async Task SetWorkStatus(int id, bool status) 
         {
             var employee = await _employeeRepository.GetById(id);
             if (employee == null) throw new Exception("Workers isnt find");

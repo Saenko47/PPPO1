@@ -12,7 +12,7 @@ namespace PaterniLab1.Task3.Models
         public int CarId { get; set; }
         public int EmployeeId { get; set; }
 
-        public bool IsCompleted { get; set; } = false;
+        public bool IsCompletedVoyage { get; set; } = false;
 
         public Car Car { get; set; } = new();
         public Employee Employee { get; set; } = new();
