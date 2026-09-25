@@ -1,5 +1,6 @@
 ﻿using PaterniLab1.Task3.BaseClass;
 using PaterniLab1.Task3.Interfaces;
+using PaterniLab1.Task3.Interfaces.Services;
 using PaterniLab1.Task3.Models;
 using PaterniLab1.Task3.Requests.VoyageRequest;
 using System;
@@ -8,7 +9,7 @@ using System.Text;
 
 namespace PaterniLab1.Task3.Services
 {
-    internal class VoyageService
+    internal class VoyageService: IVoyageService
     {
         private readonly BaseRepositoryTask3<Voyage> _repo;
 
@@ -32,7 +33,7 @@ namespace PaterniLab1.Task3.Services
             await _carStatusChanger.SetWorkStatus(request.CarId, true);
 
             await _repo.AddAsync(newVoyage);
-
+            await _repo.SaveChangesAsync();
 
         }
 
@@ -44,7 +45,8 @@ namespace PaterniLab1.Task3.Services
 
             await _employeeStatusChanger.SetWorkStatus(voyageToClose.EmployeeId, false);
             await _carStatusChanger.SetWorkStatus(voyageToClose.CarId, false);
-           
+
+            await _repo.SaveChangesAsync();
         }
     }
 }

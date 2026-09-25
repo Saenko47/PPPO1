@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <Folder Include="Task2\DTO\Book\" />
+    <Folder Include="Task3\Factory\" />
   </ItemGroup>
 
 </Project>

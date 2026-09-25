@@ -14,8 +14,8 @@ namespace PaterniLab1.Task3.Models
 
         public bool IsCompletedVoyage { get; set; } = false;
 
-        public Car Car { get; set; } = new();
-        public Employee Employee { get; set; } = new();
+        public Car Car { get; set; } = null!;
+        public Employee Employee { get; set; } = null!;
 
 
     }

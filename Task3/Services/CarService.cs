@@ -1,5 +1,6 @@
 ﻿using PaterniLab1.Task3.BaseClass;
 using PaterniLab1.Task3.Interfaces;
+using PaterniLab1.Task3.Interfaces.Services;
 using PaterniLab1.Task3.Models;
 using PaterniLab1.Task3.Realization;
 using PaterniLab1.Task3.Requests.CarRequest;
@@ -10,7 +11,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PaterniLab1.Task3.Services
 {
-    internal class CarService: IWorkStatus<Car>
+    internal class CarService: IWorkStatus<Car>, ICarService
     {
         private readonly BaseRepositoryTask3<Car> _carRepository;
 

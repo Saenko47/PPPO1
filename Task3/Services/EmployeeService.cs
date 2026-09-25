@@ -3,6 +3,7 @@
 using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using PaterniLab1.Task3.BaseClass;
 using PaterniLab1.Task3.Interfaces;
+using PaterniLab1.Task3.Interfaces.Services;
 using PaterniLab1.Task3.Models;
 using PaterniLab1.Task3.Realization;
 using PaterniLab1.Task3.Requests.EmployeeRequsts;
@@ -13,14 +14,14 @@ using System.Text;
 
 namespace PaterniLab1.Task3.Services
 {
-    internal class EmployeeService: IWorkStatus<Employee>
+    internal class EmployeeService: IWorkStatus<Employee>, IEmployeeServices
     {
-        private readonly EmployeeRepository _employeeRepository;
-        private readonly LicenceOfEmployeeService _licenseService;
+        private readonly IEmployeeRepository _employeeRepository;
+        private readonly ICreateLicenseForEmployeeByRequest _licenseService;
 
 
 
-        public EmployeeService(EmployeeRepository employeeRepository, LicenceOfEmployeeService licenseService)
+        public EmployeeService(IEmployeeRepository employeeRepository, ICreateLicenseForEmployeeByRequest licenseService)
         {
             _employeeRepository = employeeRepository;
             _licenseService = licenseService;

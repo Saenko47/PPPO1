@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using static PaterniLab1.Task3.Tools.Enums;
 
 namespace PaterniLab1.Task3.Models
 {
+    [PrimaryKey(nameof(Id))]
     internal class LicenseOnCar
     {
         public int Id { get; set; }

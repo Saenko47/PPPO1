@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PaterniLab1.Task3.BaseClass;
 using PaterniLab1.Task3.Data;
-
+using PaterniLab1.Task3.Interfaces;
 using PaterniLab1.Task3.Models;
 using PaterniLab1.Task3.Requests.Licence;
 using System;
@@ -10,7 +10,7 @@ using System.Text;
 
 namespace PaterniLab1.Task3.Realization
 {
-    internal class EmployeeRepository: BaseRepositoryTask3<Employee>
+    internal class EmployeeRepository: BaseRepositoryTask3<Employee>, IEmployeeRepository
     {
        
         public EmployeeRepository(AppDBContextTask3 context) : base(context)

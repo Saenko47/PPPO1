@@ -1,4 +1,6 @@
 ﻿using PaterniLab1.Task3.BaseClass;
+using PaterniLab1.Task3.Interfaces;
+using PaterniLab1.Task3.Interfaces.Services;
 using PaterniLab1.Task3.Models;
 using PaterniLab1.Task3.Realization;
 using PaterniLab1.Task3.Requests.Licence;
@@ -8,12 +10,12 @@ using System.Text;
 
 namespace PaterniLab1.Task3.Services
 {
-    internal class LicenceOfEmployeeService
+    internal class LicenceOfEmployeeService: ICreateLicenseForEmployeeByRequest
     {
         private readonly BaseRepositoryTask3<LicenseOfEmployee> _licenseOfEmployeeRepository;
-        private readonly LicenceRepository _licenceRepository;
+        private readonly IGetLicenseByTypes _licenceRepository;
 
-        public LicenceOfEmployeeService(BaseRepositoryTask3<LicenseOfEmployee> licenseRepo, LicenceRepository licenceRepository)
+        public LicenceOfEmployeeService(BaseRepositoryTask3<LicenseOfEmployee> licenseRepo, IGetLicenseByTypes licenceRepository)
         {
             _licenseOfEmployeeRepository = licenseRepo;
             _licenceRepository = licenceRepository;
